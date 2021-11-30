@@ -1,0 +1,14 @@
+const http = require('http');
+const express = require('express')
+const Node = express();
+app.use((req,res,next) => {
+    console.log('in the Middleware');
+    next();
+})
+
+app.use((req,res,next) => {
+    console.log('in the another Middleware');
+    res.send(`<h1>Hello This Is My World</h1>`)
+})
+const app = http.createServer(Node);
+app.listen(3000);
